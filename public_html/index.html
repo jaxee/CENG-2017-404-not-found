@@ -4,11 +4,13 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Lunar Station</title>
+  <title>C-ENG Lunar Station</title>
 
   	<!-- stylesheets -->
  	<link rel="stylesheet" href="css/main.css">
  	<link rel="stylesheet" href="css/grid12.css">
+
+ 	<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 
 <body>
@@ -17,7 +19,7 @@
 		<h1> Lunar Station </h1>
 
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-md-5 column">
 				<h2> Add Item </h2>
 				<form id="addItem">
 				  <label><b>* Name:</b></label>
@@ -36,10 +38,75 @@
 					<button type="reset" value="Reset" class='btn btn-grey'>Clear</button>
 				</form>
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-7 column">
 				<h2> Supplies </h2>
 				<h3> Items </h3>
+				<div class="allItems">
+					<p> Total Items: 6 </p>
+					<table>
+					  <tr>
+					  	<th> </th>
+					    <th>Name</th>
+					    <th>Price</th>
+					    <th>Volume</th>
+					    <th>Days Until Expiration</th>
+					  </tr>
+					  <tr>
+					  	<td> X </th>
+					    <td>Testing 1</td>
+					    <td>$100</td>
+					    <td>100m3</td>
+					    <td>10 days</td>
+					  </tr>
+					  <tr>
+					  	<td> X </th>
+					    <td>February</td>
+					    <td>$80</td>
+					    <td>10m3</td>
+					    <td>10 days</td>
+					  </tr>
+					  <tr>
+					  	<td> X </th>
+					    <td>February</td>
+					    <td>$80</td>
+					    <td>10m3</td>
+					    <td>10 days</td>
+					  </tr>
+					  <tr>
+					  	<td> X </th>
+					    <td>February</td>
+					    <td>$80</td>
+					    <td>10m3</td>
+					    <td>10 days</td>
+					  </tr>
+					  <tr>
+					  	<td> X </th>
+					    <td>February</td>
+					    <td>$80</td>
+					    <td>10m3</td>
+					    <td>10 days</td>
+					  </tr>
+					  <tr>
+					  	<td> X </th>
+					    <td>February</td>
+					    <td>$80</td>
+					    <td>10m3</td>
+					    <td>10 days</td>
+					  </tr>
+					</table>
+				</div>
+
 				<h3> Summary </h3>
+				<p> Total price of all items: $100.00 </p>
+				<div class="row">
+					<div class="col-md-6">
+						<h4> Total items per month </h4>
+						<div class="chart"></div>
+					</div>
+					<div class="col-md-6">
+						<h4> Total items per day </h4>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
