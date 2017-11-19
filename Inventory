@@ -26,7 +26,7 @@ function addSupply(supply, date){
 		return this.checkCapacity();
 	}
 	//Adding this item will mean that it would exceed max capacity
-	return 5;
+	return 3;
 }
 
 //Removes the first instence of a supply
@@ -89,8 +89,8 @@ function checkCapacity(){
 	else if(capacity <= LOW_CAPACITY){
 		return 2;
 	}
-	//If capacity is above max capacity
-	else if(capacity == MAX_CAPACITY){
+	//If capacity is at max capacity
+	else if(capacity > MAX_CAPACITY){
 		return 3;
 	}
 	//If capacity is at high Capacity
