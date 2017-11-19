@@ -99,3 +99,16 @@ function checkCapacity(){
 	}
 	return 0;
 }
+
+//Get the number total items 
+function getItemTotal(){
+	int itemTotal = 0;
+	for(int x = 0; x < supplies.length(); x++){
+		for(int y = 0; y < supplies[x].length(); y++){
+			for(int z = 0; z < supplies[x][y].length(); z++){
+				itemTotal++;
+			}
+		}
+	}
+	return itemTotal;
+}
