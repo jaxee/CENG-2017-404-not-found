@@ -11,11 +11,11 @@ const int LOW_CAPACITY = 52000;
 const int HIGH_CAPACITY = 76000;
 const int MIN_CAPACITY = 48000;
 //Pseudo value of the start year, should only ever be initialized once.
-int START_YEAR = 2017;
+int START_YEAR = 117;
 
 //Initializes the Start Year if start year is different from 2017, called only once
 function Inventory(startYear){
-	START_YEAR = startYear;
+	START_YEAR = startYear - 1900;
 }
 
 //Adds a supply into the supplies array
@@ -49,31 +49,31 @@ function removeExpired(date){
 	}
 }
 
-//Get the price per month
+//Get the cost per month
 function getMonthBreakDown(year){
 	int x = year - START_YEAR; 
 	var monthBreakDown = [];
 		for(int y = 0; y < supplies[x].length(); y++){
-			int totalPrice = 0;
+			int totalCost = 0;
 			for(int z = 0; z < supplies[x][y].length(); z++){
-				totalPrice = supplies[x][y][z].price;
+				totalCost = supplies[x][y][z].cost;
 			}
-			monthBreakDown.push(totalPrice);
+			monthBreakDown.push(totalCost);
 		}
 	}
 	return monthBreakDown;
 }
 
-//Get the price per year
+//Get the Cost per year
 function getYearBreakDown(){
 	int x = year - START_YEAR; 
 	var yearBreakDown = [];
-	int totalPrice = 0;
+	int totalCost = 0;
 		for(int y = 0; y < supplies[x].length(); y++){
 			for(int z = 0; z < supplies[x][y].length(); z++){
-				totalPrice = supplies[x][y][z].price;
+				totalCost= supplies[x][y][z].cost;
 			}
-			yearBreakDown.push(totalPrice);
+			yearBreakDown.push(totalCost);
 		}
 	}
 	return yearBreakDown;
@@ -107,6 +107,24 @@ function getItemTotal(){
 		for(int y = 0; y < supplies[x].length(); y++){
 			for(int z = 0; z < supplies[x][y].length(); z++){
 				itemTotal++;
+			}
+		}
+	}
+	return itemTotal;
+}
+
+//Get the current capacity
+function getCapacity(){
+	return capacity;
+}
+
+//Get the total cost of the inventory
+function getCostTotal(){
+	int costTotal = 0;
+	for(int x = 0; x < supplies.length(); x++){
+		for(int y = 0; y < supplies[x].length(); y++){
+			for(int z = 0; z < supplies[x][y].length(); z++){
+				costTotal+= supplies[x][y][z].cost;
 			}
 		}
 	}
