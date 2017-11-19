@@ -1,0 +1,114 @@
+
+//A 3D array with [Year][Month][ItemIndex]
+var supplies;
+//The current date
+var currentDate;
+//Capacity of the list
+double capacity = 0;
+//Constants for capacities
+const int MAX_CAPACITY = 80000; 
+const int LOW_CAPACITY = 52000;
+const int HIGH_CAPACITY = 76000;
+const int MIN_CAPACITY = 48000;
+//Pseudo value of the start year, should only ever be initialized once.
+int START_YEAR = 2017;
+
+//Initializes the Start Year if start year is different from 2017, called only once
+function Inventory(startYear){
+	START_YEAR = startYear;
+}
+
+//Adds a supply into the supplies array
+function addSupply(supply, date){
+	if(capacity + supply.size <= MAX_CAPACITY){}
+		supplies[date.getYear() - START_YEAR][date.getMonth()].push(supply);
+		capacity += supply.size;
+		return this.checkCapacity();
+	}
+	//Adding this item will mean that it would exceed max capacity
+	return 3;
+}
+
+//Removes the first instence of a supply
+function removeSupply(x, y, z){
+	delete supplies[x][y][z];
+	return this.checkCapacity();
+}
+
+//Removes the expired supplies
+function removeExpired(date){
+	for(int x = 0; x < supplies.length(); x++){
+		for(int y = 0; y < supplies[x].length(); y++){
+			for(int z = 0; z < supplies[x][y].length(); z++){
+				if(supplies[x][y][z].expired(date)){
+					delete supplies[z];
+					return this.checkCapacity();
+				}
+			}
+		}
+	}
+}
+
+//Get the price per month
+function getMonthBreakDown(year){
+	int x = year - START_YEAR; 
+	var monthBreakDown = [];
+		for(int y = 0; y < supplies[x].length(); y++){
+			int totalPrice = 0;
+			for(int z = 0; z < supplies[x][y].length(); z++){
+				totalPrice = supplies[x][y][z].price;
+			}
+			monthBreakDown.push(totalPrice);
+		}
+	}
+	return monthBreakDown;
+}
+
+//Get the price per year
+function getYearBreakDown(){
+	int x = year - START_YEAR; 
+	var yearBreakDown = [];
+	int totalPrice = 0;
+		for(int y = 0; y < supplies[x].length(); y++){
+			for(int z = 0; z < supplies[x][y].length(); z++){
+				totalPrice = supplies[x][y][z].price;
+			}
+			yearBreakDown.push(totalPrice);
+		}
+	}
+	return yearBreakDown;
+}
+
+//Check the capacity within the bounds
+function checkCapacity(){
+	//If capacity is less than the minimum
+	if(capacity < MIN_CAPACITY){
+		return 1;
+	}
+	//If capacity is at low capacity
+	else if(capacity <= LOW_CAPACITY){
+		return 2;
+	}
+	//If capacity is at max capacity
+	else if(capacity > MAX_CAPACITY){
+		return 3;
+	}
+	//If capacity is at high Capacity
+	else if(capacity >= HIGH_CAPACITY){
+		return 4;
+	}
+	return 0;
+}
+
+//Get the number total items 
+function getItemTotal(){
+	int itemTotal = 0;
+	for(int x = 0; x < supplies.length(); x++){
+		for(int y = 0; y < supplies[x].length(); y++){
+			for(int z = 0; z < supplies[x][y].length(); z++){
+				itemTotal++;
+			}
+		}
+	}
+	return itemTotal;
+}
