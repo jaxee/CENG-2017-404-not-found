@@ -90,11 +90,11 @@ function checkCapacity(){
 		return 2;
 	}
 	//If capacity is above max capacity
-	else if(capacity > MAX_CAPACITY){
+	else if(capacity == MAX_CAPACITY){
 		return 3;
 	}
 	//If capacity is at high Capacity
-	else if(capacity == HIGH_CAPACITY){
+	else if(capacity >= HIGH_CAPACITY){
 		return 4;
 	}
 	return 0;
