@@ -1,8 +1,6 @@
 
 //A 3D array with [Year][Month][ItemIndex]
 var supplies;
-//The current date
-var currentDate;
 //Capacity of the list
 double capacity = 0;
 //Constants for capacities
