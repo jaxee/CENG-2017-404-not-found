@@ -18,14 +18,11 @@ html, body {
 h1 {
 	text-align: center;
 	font-family: "titles";
+	margin-bottom: 45px;
 }
 
 h2, h3 {
 	font-family: "titles";
-}
-
-h1 {
-	margin-bottom: 45px;
 }
 
 .header {
@@ -90,4 +87,56 @@ th, td {
     padding: 15px;
     text-align: left;
     border: 1px solid black;
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    h1 {
+		font-size: 3.7em;
+	}
+
+	h2 {
+		font-size: 3.4em;
+	}
+
+	h3 {
+		font-size: 3.0em;
+	}
+
+	h4 {
+		font-size: 2.5em;
+	}
+
+	p {
+		font-size: 2.2em;
+	}
+
+	label, td, th {
+		font-size: 1.6em;
+	}
+}
+
+@media screen and (max-device-width: 480px) {
+    h1 {
+		font-size: 3.7em;
+	}
+
+	h2 {
+		font-size: 3.4em;
+	}
+
+	h3 {
+		font-size: 3.0em;
+	}
+
+	h4 {
+		font-size: 2.5em;
+	}
+
+	p {
+		font-size: 2.2em;
+	}
+
+	label, td, th {
+		font-size: 1.6em;
+	}
 }
