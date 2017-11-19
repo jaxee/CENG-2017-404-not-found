@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Supply} from '../supply';
 
 @Component({
   selector: 'app-supplies',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuppliesComponent implements OnInit {
 
-  constructor() { }
+
+
+
+  constructor(private http:Http) { }
 
   ngOnInit() {
+  }
+
+  Expired():Date {
+    return()
   }
 
 }
