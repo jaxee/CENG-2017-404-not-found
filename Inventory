@@ -4,7 +4,7 @@ var supplies;
 //The current date
 var currentDate;
 //Capacity of the list
-int capacity = 0;
+double capacity = 0;
 //Constants for capacities
 const int MAX_CAPACITY = 80000; 
 const int LOW_CAPACITY = 52000;
