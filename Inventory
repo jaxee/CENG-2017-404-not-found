@@ -63,7 +63,7 @@ function getMonthBreakDown(year){
 }
 
 //Get the Cost per year
-function getYearBreakDown(){
+function getYearBreakDown(year){
 	int x = year - START_YEAR; 
 	var yearBreakDown = [];
 	int totalCost = 0;
