@@ -9,6 +9,6 @@
   "author": "Jackie Ellis, Lukundu Lako, Patrick Hodgson, Chris Wang",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.16.2"
   }
 }
