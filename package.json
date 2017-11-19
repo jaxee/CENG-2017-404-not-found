@@ -1,0 +1,14 @@
+{
+  "name": "ceng_programming_competition",
+  "version": "1.0.0",
+  "description": "CENG Programming Challenge 2017",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jackie Ellis, Lukundu Lako, Patrick Hodgson, Chris Wang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+  }
+}
